@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import re
-import pytest
 
 
 def merge_intervals(intervals):
@@ -49,43 +48,21 @@ def string_darts(target, words_lst):
     return False
 
 
-@pytest.mark.parametrize(
-    "target,words, expected",
-    [
-        pytest.param(
-            "well hello there", ["well hello there"], True, id="single-operation-ok"
-        ),
-        pytest.param(
-            "well hello there", ["there", "hello", "well"], True, id="no-repeat-ok"
-        ),
-        pytest.param(
-            "Well heLlo theRe",
-            ["there", "he", "l", "o", "we"],
-            True,
-            id="with-repeats-ok",
-        ),
-        pytest.param(
-            "Well hello there. General Kenobi!",
-            ["there", "he", "l", "o", "e", "w", "!"],
-            False,
-            id="not-ok",
-        ),
-    ],
-)
-def test_string_darts(target, words, expected):
-    assert string_darts(target, words) is expected
+if __name__ == "__main__":
+    print("Running: merge_intervals")
 
+    input_intervals = [[-1, 15], [-10, 3], [13, 28], [40, 50], [50, 100]]
+    print(f"Input: {input_intervals}")
 
-@pytest.mark.parametrize(
-    "input,output",
-    [
-        pytest.param(
-            [[1, 21], [-10, -4], [-20, -1], [20, 30]], [[-20, -1], [1, 30]], id="test-1"
-        ),
-        pytest.param(
-            [[1, 5], [2, 7], [6, 15], [7, 12], [3, 4]], [[1, 15]], id="test-2"
-        ),
-    ],
-)
-def test_merge_intervals(input, output):
-    assert merge_intervals(input) == output
+    merged_intervals = merge_intervals(input_intervals)
+    print(f"Output: {merged_intervals}")
+
+    print("\n================\n")
+
+    print("Running: string_darts")
+    text = "I am eating a frog"
+    words = ["i", "eat", "ing", "am", "a", "frog"]
+    print(f"Test string: '{text}'")
+    print(f"Words array: {words}")
+    can_represent = string_darts(target=text, words_lst=words)
+    print(f"Result: {can_represent}")

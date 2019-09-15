@@ -1,19 +1,36 @@
 A way to solve 2 different coding tasks the way i see.
 
-Install dependencies:
+## Prerequisites:
+- python3.7 installed system wide.
+- make sure to call either `python tasks.py` if it defaults to python3.7 or `python3 tasks.py` when executing `.py` files. 
+Also `py tasks.py` might work on some systems.
 
+## Usage:
+
+- install dependencies and see if it works using tests
+
+or
+ 
+- just type: `python tasks.py` and see output of a simpler test. 
+
+## Step 1. Install dependencies:
+
+Run `pre-setup` only if you don't have pip and virtualenv in your system:
+
+```./pre-setup.sh```
+
+Create env and install requirements:
 ```
  virtualenv -p python3 env
  source env/bin/activate
  pip install -r requirements.txt
 ```
  
- Run tests:
+## Step 2. Run tests:
 
 ```
-pytest tasks.py -s -vv
+pytest tests.py -s -vv
 ```
-
 
 ### TASK 1. 
 
