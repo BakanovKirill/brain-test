@@ -23,7 +23,7 @@ def merge_intervals(intervals):
 
 def string_darts(target, words_lst):
     """
-    Returns True if a target string can be represented with any subset of words_list or whole_words_list
+    Returns True if a target string can be represented with any subset of words_lst or whole words_lst
 
     :param target: any string, ex. "Hello there!"
     :param words_lst: list of lower cased characters or words, ex. ['a', 'bc', 'hello', '.']
